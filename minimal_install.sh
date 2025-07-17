@@ -6,11 +6,11 @@ sudo apt -y autoremove
 
 # base packages
 xdg-user-dirs-update
+sudo apt -y install git
 sudo apt -y install xorg
 sudo apt -y install xserver-xorg
 sudo apt -y install xinput
 sudo apt -y install build-essential
-sudo apt -y install git
 sudo apt -y install make
 
 # display manager
@@ -91,11 +91,9 @@ sudo apt -y install mpv
 sudo apt -y install mpv-mpris
 sudo apt -y install nsxiv
 sudo apt -y install libreoffice
-sudo apt -y install feh
 sudo apt -y install clangd
-sudo apt -y install tlp                     # tlp-rdw
+sudo apt -y install tlp
 sudo apt -y install policykit-1-gnome
-sudo apt -y install network-manager
 sudo apt -y install network-manager-gnome
 sudo apt -y install pulsemixer
 sudo apt -y install htop
@@ -107,6 +105,8 @@ sudo apt -y install python3-sympy
 sudo apt -y install python3.11-venv
 sudo apt -y install python3-pip
 sudo apt -y install python3-pylsp
+sudo apt -y install xss-lock
+sudo apt -y install thunar
 
 # finalise
 sudo apt -y update
