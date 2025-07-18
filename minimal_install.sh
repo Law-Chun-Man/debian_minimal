@@ -47,6 +47,7 @@ rm temp
 
 # st
 sudo apt -y install libharfbuzz-dev
+
 mv ~/.config/suckless/st/ ~/.config/st/
 cd ~/.config/st/
 sudo make clean install
@@ -60,6 +61,7 @@ cd
 
 # for slock
 sudo apt -y install libxrandr-dev
+
 mv ~/.config/suckless/slock/ ~/.config/slock/
 cd ~/.config/slock/
 sudo make clean install
