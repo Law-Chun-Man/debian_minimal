@@ -18,15 +18,19 @@ sudo apt -y install lightdm
 sudo systemctl enable lightdm
 sudo rm /usr/share/xsessions/lightdm-xsession.desktop
 
+# git clone config
+mkdir -p ~/.config
+cd ~/.config
+git clone https://github.com/Law-Chun-Man/suckless/
+cd
+
 # dwm
 sudo apt -y install libx11-dev
 sudo apt -y install libxinerama-dev
 sudo apt -y install libxft-dev
 
-mkdir -p $HOME/.config
-cd $HOME/.config
-git clone https://git.suckless.org/dwm
-cd $HOME/.config/dwm
+mv ~/.config/suckless/dwm/ ~/.config/dwm/
+cd ~/.config/dwm/
 sudo make clean install
 cd
 
@@ -43,24 +47,21 @@ rm temp
 
 # st
 sudo apt -y install libharfbuzz-dev
-cd $HOME/.config
-git clone https://git.suckless.org/st
-cd $HOME/.config/st
+mv ~/.config/suckless/st/ ~/.config/st/
+cd ~/.config/st/
 sudo make clean install
 cd
 
 # for dmenu
-cd $HOME/.config
-git clone https://git.suckless.org/dmenu
-cd $HOME/.config/dmenu
+mv ~/.config/suckless/dmenu/ ~/.config/dmenu/
+cd ~/.config/dmenu/
 sudo make clean install
 cd
 
 # for slock
 sudo apt -y install libxrandr-dev
-cd $HOME/.config
-git clone https://git.suckless.org/slock
-cd $HOME/.config/slock
+mv ~/.config/suckless/slock/ ~/.config/slock/
+cd ~/.config/slock/
 sudo make clean install
 cd
 
