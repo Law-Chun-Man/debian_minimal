@@ -34,6 +34,10 @@ cd ~/.config/dwm/
 rm -rf .git/
 sed -i "s/username/$USER/g" config.def.h
 sudo make clean install
+cd ~/.config/dwm/bash_scripts/
+chmod +x *
+cd ~/.config/dwm/dunst/
+chmod +x *.sh
 cd
 
 cat > temp << "EOF"
