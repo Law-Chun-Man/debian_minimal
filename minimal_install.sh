@@ -31,6 +31,7 @@ sudo apt -y install libxft-dev
 
 mv ~/.config/suckless/dwm/ ~/.config/dwm/
 cd ~/.config/dwm/
+rm -rf .git/
 sed -i "s/username/$USER/g" config.def.h
 sudo make clean install
 cd
@@ -51,12 +52,14 @@ sudo apt -y install libharfbuzz-dev
 
 mv ~/.config/suckless/st/ ~/.config/st/
 cd ~/.config/st/
+rm -rf .git/
 sudo make clean install
 cd
 
 # for dmenu
 mv ~/.config/suckless/dmenu/ ~/.config/dmenu/
 cd ~/.config/dmenu/
+rm -rf .git/
 sudo make clean install
 cd
 
@@ -65,8 +68,12 @@ sudo apt -y install libxrandr-dev
 
 mv ~/.config/suckless/slock/ ~/.config/slock/
 cd ~/.config/slock/
+rm -rf .git/
 sudo make clean install
 cd
+
+# remove folder
+rm -rf ~/.config/suckless/
 
 # other packages
 sudo apt -y install lxappearance
