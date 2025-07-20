@@ -31,6 +31,7 @@ sudo apt -y install libxft-dev
 
 mv ~/.config/suckless/dwm/ ~/.config/dwm/
 cd ~/.config/dwm/
+sed -i "s/username/$USER/g" config.def.h
 sudo make clean install
 cd
 
