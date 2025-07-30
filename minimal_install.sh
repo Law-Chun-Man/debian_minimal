@@ -5,16 +5,19 @@ sudo apt -y upgrade
 sudo apt -y autoremove
 
 # base packages
-xdg-user-dirs-update
-sudo apt -y install git
-sudo apt -y install xorg
-sudo apt -y install xserver-xorg
-sudo apt -y install xinput
-sudo apt -y install build-essential
-sudo apt -y install make
+base_packages=(
+    git
+    xorg
+    xserver-xorg
+    xinput
+    build-essential
+    make
+    lightdm
+)
+
+sudo apt -y install "${base_packages[@]}"
 
 # display manager
-sudo apt -y install lightdm
 sudo systemctl enable lightdm
 sudo rm /usr/share/xsessions/lightdm-xsession.desktop
 
@@ -25,9 +28,7 @@ git clone https://github.com/Law-Chun-Man/suckless/
 cd
 
 # dwm
-sudo apt -y install libx11-dev
-sudo apt -y install libxinerama-dev
-sudo apt -y install libxft-dev
+sudo apt -y install libx11-dev libxinerama-dev libxft-dev
 
 mv ~/.config/suckless/dwm/ ~/.config/dwm/
 cd ~/.config/dwm/
@@ -67,63 +68,58 @@ rm -rf .git/
 sudo make clean install
 cd
 
-# for slock
-sudo apt -y install libxrandr-dev
-
-mv ~/.config/suckless/slock/ ~/.config/slock/
-cd ~/.config/slock/
-rm -rf .git/
-sudo make clean install
-cd
-
 # remove folder
 rm -rf ~/.config/suckless/
 
 # other packages
-sudo apt -y install lxappearance
-sudo apt -y install picom
-sudo apt -y install dunst
-sudo apt -y install curl
-sudo apt -y install playerctl
-sudo apt -y install gnome-boxes
-sudo apt -y install firefox-esr
-sudo apt -y install neovim
-sudo apt -y install vifm
-sudo apt -y install obs-studio
-sudo apt -y install gimp
-sudo apt -y install kdenlive
-sudo apt -y install pandoc
-sudo apt -y install fcitx5
-sudo apt -y install fcitx5-chinese-addons
-sudo apt -y install fonts-jetbrains-mono
-sudo apt -y install fonts-font-awesome
-sudo apt -y install texlive-full
+other_packages=(
+    lxappearance
+    picom
+    dunst
+    curl
+    playerctl
+    gnome-boxes
+    firefox-esr
+    neovim
+    vifm
+    obs-studio
+    gimp
+    kdenlive
+    pandoc
+    fcitx5
+    fcitx5-chinese-addons
+    fonts-jetbrains-mono
+    fonts-font-awesome
+    texlive-full
+    openvpn
+    zathura
+    mpv
+    mpv-mpris
+    nsxiv
+    libreoffice
+    clangd
+    tlp
+    policykit-1-gnome
+    network-manager-gnome
+    pulsemixer
+    htop
+    python3-pypdf2
+    python3-matplotlib
+    python3-numpy
+    python3-scipy
+    python3-sympy
+    python3.11-venv
+    python3-pip
+    python3-pylsp
+    xss-lock
+    thunar
+    thunar-archive-plugin
+)
 
-# to be checked
-sudo apt -y install openvpn
-sudo apt -y install zathura
-sudo apt -y install mpv
-sudo apt -y install mpv-mpris
-sudo apt -y install nsxiv
-sudo apt -y install libreoffice
-sudo apt -y install clangd
-sudo apt -y install tlp
-sudo apt -y install policykit-1-gnome
-sudo apt -y install network-manager-gnome
-sudo apt -y install pulsemixer
-sudo apt -y install htop
-sudo apt -y install python3-pypdf2
-sudo apt -y install python3-matplotlib
-sudo apt -y install python3-numpy
-sudo apt -y install python3-scipy
-sudo apt -y install python3-sympy
-sudo apt -y install python3.11-venv
-sudo apt -y install python3-pip
-sudo apt -y install python3-pylsp
-sudo apt -y install xss-lock
-sudo apt -y install thunar
+sudo apt -y install "${other_packages[@]}"
 
 # finalise
 sudo apt -y update
 sudo apt -y upgrade
 sudo apt -y autoremove
+xdg-user-dirs-update
