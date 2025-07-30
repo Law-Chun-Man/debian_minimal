@@ -112,6 +112,7 @@ other_packages=(
     python3-pip
     python3-pylsp
     xss-lock
+    light-locker
     thunar
     thunar-archive-plugin
 )
