@@ -115,9 +115,16 @@ other_packages=(
     light-locker
     thunar
     thunar-archive-plugin
+    xdotool
 )
 
 sudo apt -y install "${other_packages[@]}"
+
+#firewall
+sudo apt -y install ufw
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+sudo ufw enable
 
 # finalise
 sudo apt -y update
