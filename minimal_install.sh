@@ -115,7 +115,6 @@ other_packages=(
     light-locker
     thunar
     thunar-archive-plugin
-    xdotool
 )
 
 sudo apt -y install "${other_packages[@]}"
