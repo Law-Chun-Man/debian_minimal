@@ -78,30 +78,36 @@ other_packages=(
     dunst
     curl
     playerctl
-    gnome-boxes
     firefox-esr
     neovim
     vifm
-    obs-studio
-    gimp
-    kdenlive
-    pandoc
     fcitx5
     fcitx5-chinese-addons
     fonts-jetbrains-mono
     fonts-font-awesome
-    texlive-full
-    openvpn
     zathura
-    mpv
-    mpv-mpris
     nsxiv
-    libreoffice
     clangd
-    tlp
-    policykit-1-gnome
+    mate-polkit
     network-manager-gnome
     pulsemixer
+    python3-pylsp
+    xss-lock
+    light-locker
+    thunar
+    thunar-archive-plugin
+
+    gnome-boxes
+    obs-studio
+    gimp
+    kdenlive
+    pandoc
+    texlive-full
+    openvpn
+    mpv
+    mpv-mpris
+    libreoffice
+    tlp
     htop
     python3-pypdf2
     python3-matplotlib
@@ -110,11 +116,6 @@ other_packages=(
     python3-sympy
     python3.11-venv
     python3-pip
-    python3-pylsp
-    xss-lock
-    light-locker
-    thunar
-    thunar-archive-plugin
 )
 
 sudo apt -y install "${other_packages[@]}"
@@ -123,7 +124,18 @@ sudo apt -y install "${other_packages[@]}"
 sudo apt -y install ufw
 sudo ufw default allow outgoing
 sudo ufw default deny incoming
+sudo ufw allow 1714:1764/tcp
+sudo ufw allow 1714:1764/udp
+sudo ufw delete 3
+sudo ufw delete 3
 sudo ufw enable
+
+#remove chinese font
+sudo rm /usr/share/fonts/truetype/arphic-bkai00mp/bkai00mp.ttf
+sudo rm /usr/share/fonts/truetype/arphic-gbsn00lp/gbsn00lp.ttf
+sudo rm /usr/share/fonts/truetype/arphic-bsmi00lp/bsmi00lp.ttf
+sudo rm /usr/share/fonts/truetype/arphic-gkai00mp/gkai00mp.ttf
+sudo rm /usr/share/fonts/truetype/arphic/uming.ttc
 
 # finalise
 sudo apt -y update
