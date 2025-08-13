@@ -76,7 +76,6 @@ other_packages=(
     lxappearance
     picom
     dunst
-    curl
     playerctl
     firefox-esr
     neovim
@@ -88,7 +87,7 @@ other_packages=(
     zathura
     nsxiv
     clangd
-    mate-polkit
+    policykit-1-gnome
     network-manager-gnome
     pulsemixer
     python3-pylsp
@@ -101,6 +100,7 @@ other_packages=(
     obs-studio
     gimp
     kdenlive
+    kdeconnect
     pandoc
     texlive-full
     openvpn
